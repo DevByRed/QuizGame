@@ -1,0 +1,202 @@
+/*Basic Reset ------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ece3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*Le body occupe 100% de la fenêtre du navigateur*/
+  padding: 1rem; /*1 rem = 16 px ( taille page html )*/
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%; /*Tu prends tout le body */
+  max-width: 680px; /*Mais jamais tu ne dépasse 680px*/
+  overflow: hidden; /*Tout ce qui dépasse de la boite est coupé net*/
+  position: relative;
+}
+
+/* Les Cases ------------------------------ */
+
+.hidden {
+  /*On applique ce style aux trois div principales*/
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hidden.active {
+  display: block;
+}
+
+/* Case de départ ------------------------------ */
+
+h1 {
+  color: #5b4a3a;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+#start-screen p {
+  margin-bottom: 30px;
+  color: #6b6054;
+}
+
+.quiz-header {
+  margin-bottom: 2rem;
+}
+
+#question-text {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.answer-btn {
+  background-color: #f8f0e5;
+  color: #333;
+  border: 2px solid #eadbc8;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #eadbc8;
+  border-color: #dac0ae;
+}
+
+.answer-btn.correct {
+  background-color: #e6fff0;
+  border-color: #a3f0c4;
+  color: #28a745;
+}
+
+.answer-btn.incorrect {
+  background-color: #fff0f0;
+  border-color: #ffbdbd;
+  color: #dc3545;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #f8f0e5;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #81b29a;
+  width: 0%; /*L'effet d'agrandissement de la barre*/
+  transition: width 0.3s ease;
+}
+
+/* Case de résultat ( de fin )  -------------------- */
+
+#result-screen h1 {
+  color: #97786b;
+  margin-bottom: 30px;
+}
+
+.result-info {
+  background-color: #f8f0e5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.result-info p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#result-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #97786b;
+}
+
+button {
+  background-color: #c0745e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+button:hover {
+  background-color: #d65a31;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive  -------------------- */
+
+/* Mobile  (0px - 600px) */
+@media (max-width: 600px) {
+  .container {
+    width: 76%;
+  }
+
+  #start-screen {
+    font-weight: bold;
+  }
+
+  #start-screen p {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  .result-info p,
+  #result-message {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet (600px - 800px) */
+@media (max-width: 800px) {
+  .container {
+    max-width: 500px;
+  }
+}
+
+/* Big Screen (1024px +) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 800px;
+  }
+}
